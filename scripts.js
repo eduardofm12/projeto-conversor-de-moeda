@@ -38,18 +38,21 @@ function convertValues() {
 }
 function changeCurrency() {
     const currencyName = document.getElementById("currency-name")
-    const currencyImg = document.querySelector("currency-img")
+    const currencyImg = document.querySelector(".currency-img")
 
 
     if (currencySelect.value == "dolar") {
         currencyName.innerHTML = " Dólar americano"
         currencyImg.src = "./assents/dolar.png"
+       
         
         
     }
     if (currencySelect.value == "euro") {
         currencyName.innerHTML = " euro"
         currencyImg.src = "./assents/euro.png"
+        
+        
         
 
 
