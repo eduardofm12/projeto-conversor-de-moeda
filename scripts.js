@@ -10,6 +10,8 @@ function convertValues() {
     const currencyValueConverted = document.querySelector(".currency-value-converted") // valor em dolar
     const dolarToday = 5.2
     const euroToday = 6.2
+    const ieneToday = 0.3
+    
 
 
     // if 
@@ -26,38 +28,50 @@ function convertValues() {
             currency: "EUR"
         }).format(inputCurrencyValue / euroToday)
 
+        if (currencySelect.value == "iene") {
+            currencyValueConverted.innerHTML = new Intl.NumberFormat("ja-JP", {
+                style: "currency",
+                currency: "JPY"
+            }).format(inputCurrencyValue / ieneToday)
+    
+
+       
+
+        
+
     }
-
-
+    
+    }
     currencyValueToConvert.innerHTML = new Intl.NumberFormat("pt-BR", {
         style: "currency",
         currency: "BRL"
     }).format(inputCurrencyValue)
 
 
-}
+
+
 function changeCurrency() {
     const currencyName = document.getElementById("currency-name")
     const currencyImg = document.querySelector(".currency-img")
 
 
     if (currencySelect.value == "dolar") {
-        currencyName.innerHTML = " Dólar americano"
+        currencyName.innerHTML = "Dólar americano"
         currencyImg.src = "./assents/dolar.png"
        
         
         
     }
     if (currencySelect.value == "euro") {
-        currencyName.innerHTML = " euro"
+        currencyName.innerHTML = "euro"
         currencyImg.src = "./assents/euro.png"
-        
-        
-        
 
-
+    }
+    if (currencySelect.value == "iene"){
+        currencyName.innerHTML = "iene"
+        currencyImg.src = "./assents/japao.jpg"
     }
 }
 currencySelect.addEventListener("change", changeCurrency)
 convertButton.addEventListener("click", convertValues)
-
+}
