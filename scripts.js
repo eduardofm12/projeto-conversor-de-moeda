@@ -11,8 +11,6 @@ function convertValues() {
     const dolarToday = 5.2
     const euroToday = 6.2
 
-    
-
 
     // if 
 
@@ -28,18 +26,16 @@ function convertValues() {
             currency: "EUR"
         }).format(inputCurrencyValue / euroToday)
 
-       
-    
-    
     }
+
+
     currencyValueToConvert.innerHTML = new Intl.NumberFormat("pt-BR", {
         style: "currency",
         currency: "BRL"
     }).format(inputCurrencyValue)
 
 
-
-
+}
 function changeCurrency() {
     const currencyName = document.getElementById("currency-name")
     const currencyImg = document.querySelector(".currency-img")
@@ -55,9 +51,12 @@ function changeCurrency() {
     if (currencySelect.value == "euro") {
         currencyName.innerHTML = "euro"
         currencyImg.src = "./assents/euro.png"
+        
+        
+        
+
+
     }
-   
 }
 currencySelect.addEventListener("change", changeCurrency)
 convertButton.addEventListener("click", convertValues)
-}
